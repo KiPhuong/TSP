@@ -5,24 +5,24 @@ using namespace std;
 
 int num;
 int sum;
-vector<vector<int> > tsp;
+vector<vector<int> > tsp; //ma tran dau vao
 void findMinRoute(vector<vector<int> > tsp)
 {
     int counter = 0;
     int j = 0, i = 0;
     int min = INT_MAX;
-    map<int, int> visitedRouteList;
+    map<int, int> visitedRouteList; //map danh dau thanh pho da di qua
     visitedRouteList[0] = 1; //bat dau tu thanh pho dau tien
     int route[tsp.size()];
     while (i < tsp.size() && j < tsp[i].size())
     {
  
         // Corner of the Matrix
-        if (counter >= tsp[i].size() - 1)
+        if (counter >= tsp[i].size() - 1) 
         {
             break;
         }
-        //kiem tra nhung thanh pho chua den va co chi phi nho hon -> update cost
+        //kiem tra nhung thanh pho chua den va co chi phi nho nhat -> update cost
         if (j != i && (visitedRouteList[j] == 0))
         {
             if (tsp[i][j] < min)
@@ -46,9 +46,9 @@ void findMinRoute(vector<vector<int> > tsp)
         }
     }
     i = route[counter - 1] - 1;
-    min = tsp[i][0]; //tro ve thanh pho dau tien
+    min = tsp[i][0]; //tinh khoang cach tu thanh pho hien tai toi thanh pho dau tien
     sum += min;
-    cout<<"1";
+    cout<<"1"; 
 }
  
 void Input(){
