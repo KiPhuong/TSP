@@ -33,7 +33,7 @@ void Try(int i) {
 				if (cost > (d + city[X[n]][X[1]])){
 					cost = min(cost, d + city[X[n]][X[1]]);
 					for (int i = 1; i <= n; i++){
-							path[i] = X[i]; //cap nhat path
+						path[i] = X[i]; //cap nhat path
 					}
 				}				
 			}
