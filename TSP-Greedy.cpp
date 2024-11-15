@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <map>
+#include <ctime>
 using namespace std;
 
 int num;
@@ -66,10 +67,13 @@ void Input(){
 }
 int main()
 {
+    clock_t tStart = clock();
     cout<<"Using Greedy Approach\n";
     Input();
     cout<<"Shortes path: 1 ";
     findMinRoute(tsp);
     cout << ("\nMinimum Cost is : ");
     cout << (sum);
+    printf("\nTime taken: %.2fs\n", (double)(clock() - tStart)/CLOCKS_PER_SEC);
+    return 0;
 }

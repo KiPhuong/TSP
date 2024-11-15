@@ -1,6 +1,7 @@
 #include <iostream>
 #include <algorithm>
 #include <vector>
+#include <ctime>
 
 using namespace std;
 
@@ -49,6 +50,7 @@ void Try(int i) {
 }
 
 int main() {
+	clock_t tStart = clock();
 	cout<<"Using Branch and Bound"<<endl;
 	Input();
 	X[1] = 1; //bat dau tu thanh pho thu 1
@@ -61,4 +63,6 @@ int main() {
 	}
 	cout<<"1 \n";
 	cout <<"Min cost: " << cost << endl;
+	printf("Time taken: %.2fs\n", (double)(clock() - tStart)/CLOCKS_PER_SEC);
+    return 0;
 }
