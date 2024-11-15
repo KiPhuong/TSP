@@ -102,6 +102,10 @@ if __name__ == "__main__":
     best_route = [int(city) for city in best_route]
 
     print("Final!!")
+    best_route = [x + 1 for x in best_route]
+    best_route.append(best_route[0])
     print(f"Best Route: {best_route}, Best Distance: {best_distance}")
-    print("Time: ", time.time()-start_time, "seconds!!")
+    time_final = time.time() - start_time
+    formatted_time = f"{time_final:,.2f}".replace(".", ",")
+    print("Time: ", formatted_time, "seconds!!")
 
